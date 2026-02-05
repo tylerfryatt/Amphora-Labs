@@ -1,27 +1,586 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>AI Discovery – Amphora Labs</title>
-</head>
-<body>
-  <h1>AI Discovery for Local Businesses</h1>
+<!-- /index.html  (FULL FILE REPLACEMENT) -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amphora Labs — AI Discovery for Local Businesses</title>
+    <meta
+      name="description"
+      content="Amphora Labs helps local businesses get discovered and recommended by AI-driven search, increasing visibility, clicks, and calls."
+    />
 
-  <p>We help local businesses get recommended by AI and drive more inbound leads.</p>
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --card: rgba(255, 255, 255, 0.06);
+        --card2: rgba(255, 255, 255, 0.04);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --muted2: rgba(255, 255, 255, 0.6);
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --radius2: 14px;
+      }
 
-  <ul>
-    <li>Entity cleanup + schema</li>
-    <li>AI-style answer pages</li>
-    <li>Review optimization</li>
-  </ul>
+      * {
+        box-sizing: border-box;
+      }
 
-  <p>
-    <a href="mailto:tyler@amphoralabs.co?subject=AI Discovery Audit">
-      Request a Free AI Discovery Audit
-    </a>
-  </p>
+      html,
+      body {
+        height: 100%;
+      }
 
-  <footer>
-    AI Discovery is operated by Amphora Labs LLC.
-  </footer>
-</body>
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 20% -10%, rgba(99, 102, 241, 0.25), transparent 60%),
+          radial-gradient(1000px 600px at 90% 0%, rgba(34, 197, 94, 0.18), transparent 55%),
+          radial-gradient(900px 520px at 55% 110%, rgba(236, 72, 153, 0.14), transparent 55%),
+          var(--bg);
+        line-height: 1.45;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 28px 18px 64px;
+      }
+
+      /* Header */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0 22px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(34, 197, 94, 0.75));
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .brand h1 {
+        font-size: 14px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .nav {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .nav a {
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+      }
+
+      .nav a:hover {
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .cta:hover {
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 18px;
+        margin-top: 6px;
+      }
+
+      .heroCard {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.03));
+        box-shadow: var(--shadow);
+        padding: 26px 22px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 99px;
+        background: rgba(34, 197, 94, 0.9);
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+      }
+
+      .headline {
+        font-size: 38px;
+        line-height: 1.05;
+        margin: 0 0 12px;
+        letter-spacing: -0.6px;
+      }
+
+      .subhead {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 54ch;
+      }
+
+      .heroActions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .buttonPrimary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 197, 94, 0.85));
+        font-weight: 700;
+        box-shadow: 0 12px 35px rgba(99, 102, 241, 0.16);
+      }
+
+      .buttonPrimary:hover {
+        filter: brightness(1.05);
+      }
+
+      .buttonGhost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+      }
+
+      .buttonGhost:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .small {
+        color: var(--muted2);
+        font-size: 13px;
+        margin-top: 10px;
+      }
+
+      /* Side card */
+      .sideCard {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: var(--shadow);
+        padding: 18px;
+        height: 100%;
+      }
+
+      .sideCard h3 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+
+      .kpi {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .kpiRow {
+        border-radius: var(--radius2);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 12px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .kpiRow strong {
+        font-size: 16px;
+      }
+
+      .kpiRow span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Sections */
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .card {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card2);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 15px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .section {
+        margin-top: 24px;
+      }
+
+      .sectionTitle {
+        font-size: 18px;
+        margin: 0 0 10px;
+        letter-spacing: -0.2px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .stepNum {
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 6px;
+      }
+
+      .pillRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .pill {
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 13px;
+      }
+
+      /* Contact */
+      .contact {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .contactBox {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 18px;
+      }
+
+      .contactBox p {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .contactLine {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.86);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 10px 12px;
+      }
+
+      footer {
+        margin-top: 26px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13px;
+      }
+
+      /* Responsive */
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .headline {
+          font-size: 32px;
+        }
+        .grid3,
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Amphora Labs</h1>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#what">What we do</a>
+          <a href="#how">How it works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="cta" href="mailto:tyler@amphora-labs.com?subject=AI%20Discovery%20Audit">
+          Request Audit
+        </a>
+      </header>
+
+      <main>
+        <section class="hero" id="top">
+          <div class="heroCard">
+            <div class="badge">
+              <span class="dot" aria-hidden="true"></span>
+              AI Discovery for Local Businesses
+            </div>
+
+            <h2 class="headline">
+              Get recommended by AI — and convert that attention into calls & bookings.
+            </h2>
+
+            <p class="subhead">
+              Amphora Labs improves the signals that AI-driven search systems rely on — business identity, on-site clarity,
+              structured data, and review language — so you show up more often when customers ask who to hire.
+            </p>
+
+            <div class="heroActions">
+              <a class="buttonPrimary" href="mailto:tyler@amphora-labs.com?subject=AI%20Discovery%20Audit">
+                Request a Free Audit
+              </a>
+              <a class="buttonGhost" href="#what">See what’s included</a>
+            </div>
+
+            <div class="small">
+              No long contracts. Setup + optional monthly optimization. Results reported using local discovery and website actions.
+            </div>
+          </div>
+
+          <aside class="sideCard">
+            <h3>What gets measured</h3>
+            <p class="subhead" style="margin: 0;">
+              We track improvements using concrete business actions — not vague “AI rankings.”
+            </p>
+
+            <div class="kpi">
+              <div class="kpiRow">
+                <strong>Discovery</strong>
+                <span>Searches & map visibility</span>
+              </div>
+              <div class="kpiRow">
+                <strong>Actions</strong>
+                <span>Website clicks, calls</span>
+              </div>
+              <div class="kpiRow">
+                <strong>Coverage</strong>
+                <span>FAQ / answer pages added</span>
+              </div>
+            </div>
+
+            <div class="pillRow" aria-label="Examples">
+              <span class="pill">Dentists</span>
+              <span class="pill">Plumbers</span>
+              <span class="pill">Roofers</span>
+              <span class="pill">Restaurants</span>
+              <span class="pill">Clinics</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="what">
+          <h3 class="sectionTitle">What we do</h3>
+
+          <div class="grid3">
+            <div class="card">
+              <h3>Entity + listing cleanup</h3>
+              <p>
+                Ensure your business identity (name, address, phone, categories, services) is consistent across major local platforms.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>On-site clarity + structure</h3>
+              <p>
+                Rewrite key pages so machines and humans instantly understand what you do, where you operate, and why you’re credible.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Schema + answer content</h3>
+              <p>
+                Add structured data and AI-style Q&A pages targeting real customer questions (“cost,” “near me,” “best,” “emergency”).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="how">
+          <h3 class="sectionTitle">How it works</h3>
+
+          <div class="steps">
+            <div class="card">
+              <div class="stepNum">Step 1</div>
+              <h3>Free audit</h3>
+              <p>
+                We review your listings, website, and AI-readability. You get a short report with quick wins and priority fixes.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="stepNum">Step 2</div>
+              <h3>Optimization</h3>
+              <p>
+                We implement the fixes: entity cleanup, clearer service/location pages, schema, and initial answer pages.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="stepNum">Step 3</div>
+              <h3>Measure + iterate</h3>
+              <p>
+                We compare before/after discovery and action metrics, then expand coverage with ongoing content + review strategy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <h3 class="sectionTitle">Contact</h3>
+
+          <div class="contact">
+            <div class="contactBox">
+              <p>
+                If you want a quick, practical audit (no pitch deck), email me and include your website + Google Business listing link.
+              </p>
+
+              <div class="contactLine">
+                <a class="buttonPrimary" href="mailto:tyler@amphora-labs.com?subject=AI%20Discovery%20Audit">
+                  Email for a Free Audit
+                </a>
+                <span class="mono">tyler@amphora-labs.com</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Service area</h3>
+              <p>
+                Remote-friendly. Works best for local service businesses competing on maps and inbound calls.
+              </p>
+              <div class="pillRow">
+                <span class="pill">Local Services</span>
+                <span class="pill">Clinics</span>
+                <span class="pill">Hospitality</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          © <span id="y"></span> Amphora Labs. AI Discovery services operated by Amphora Labs LLC.
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
